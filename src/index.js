@@ -12,12 +12,15 @@ const darkTheme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
+  // Commented out StrictMode due to warnings created from page dropdown in the table.
+  // See https://github.com/mui-org/material-ui/issues/18018 and https://github.com/mui-org/material-ui/issues/20012
+
+  // <React.StrictMode>
+  <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+    <App />
+  </ThemeProvider>,
+  // </React.StrictMode>,
   document.getElementById('root'),
 );
 
