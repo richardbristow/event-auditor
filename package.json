@@ -8,6 +8,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "lodash.escaperegexp": "^4.1.2",
     "mongodb": "^3.5.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
