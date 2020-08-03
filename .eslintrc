@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "prettier/react"
+  ]
+}
