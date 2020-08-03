@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TableCell, TableRow } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-const SkeletonTableRows = ({ numberOfRows = 5 }) => (
+const SkeletonTableRows = ({ numberOfRows }) => (
   <>
     {[...Array(numberOfRows).keys()].map((rowNumber) => (
       <TableRow key={`skeletonRow-${rowNumber}`}>
@@ -15,5 +16,13 @@ const SkeletonTableRows = ({ numberOfRows = 5 }) => (
     ))}
   </>
 );
+
+SkeletonTableRows.defaultProps = {
+  numberOfRows: 5,
+};
+
+SkeletonTableRows.propTypes = {
+  numberOfRows: PropTypes.number,
+};
 
 export default SkeletonTableRows;
