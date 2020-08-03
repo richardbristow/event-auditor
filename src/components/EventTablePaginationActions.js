@@ -8,7 +8,7 @@ import {
   LastPage,
 } from '@material-ui/icons';
 
-const TablePaginationActions = ({
+const EventTablePaginationActions = ({
   canNextPage,
   canPreviousPage,
   pageCount,
@@ -51,7 +51,7 @@ const TablePaginationActions = ({
   </>
 );
 
-TablePaginationActions.propTypes = {
+EventTablePaginationActions.propTypes = {
   canNextPage: PropTypes.bool.isRequired,
   canPreviousPage: PropTypes.bool.isRequired,
   pageCount: PropTypes.number.isRequired,
@@ -59,4 +59,4 @@ TablePaginationActions.propTypes = {
   pageIndex: PropTypes.number.isRequired,
 };
 
-export default TablePaginationActions;
+export default EventTablePaginationActions;

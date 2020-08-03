@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TableCell, TableRow } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-const SkeletonTableRows = ({ numberOfRows }) => (
+const EventTableSkeletonRows = ({ numberOfRows }) => (
   <>
     {[...Array(numberOfRows).keys()].map((rowNumber) => (
       <TableRow key={`skeletonRow-${rowNumber}`}>
@@ -17,12 +17,12 @@ const SkeletonTableRows = ({ numberOfRows }) => (
   </>
 );
 
-SkeletonTableRows.defaultProps = {
+EventTableSkeletonRows.defaultProps = {
   numberOfRows: 5,
 };
 
-SkeletonTableRows.propTypes = {
+EventTableSkeletonRows.propTypes = {
   numberOfRows: PropTypes.number,
 };
 
-export default SkeletonTableRows;
+export default EventTableSkeletonRows;
