@@ -9,10 +9,14 @@ const EventTableBody = ({
   pageSize,
   page,
   prepareRow,
+  isInitialLoad,
 }) => (
   <TableBody {...getTableBodyProps()}>
     {isLoading ? (
-      <EventTableSkeletonRows numberOfRows={pageSize} />
+      <EventTableSkeletonRows
+        isInitialLoad={isInitialLoad}
+        numberOfRows={pageSize}
+      />
     ) : (
       page.map((row) => {
         prepareRow(row);
@@ -38,6 +42,7 @@ EventTableBody.propTypes = {
   pageSize: PropTypes.number.isRequired,
   page: PropTypes.arrayOf(PropTypes.object).isRequired,
   prepareRow: PropTypes.func.isRequired,
+  isInitialLoad: PropTypes.bool.isRequired,
 };
 
 export default EventTableBody;
