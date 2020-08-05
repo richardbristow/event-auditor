@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-api": "nodemon --watch src/api src/api/server.js",
+    "start-api": "NODE_ENV=development nodemon --watch src/api src/api/server.js",
     "lint": "eslint 'src/**/*.{js,jsx}'"
   },
   "browserslist": {
