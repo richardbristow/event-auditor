@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {
+  createMuiTheme,
+  ThemeProvider,
+  StylesProvider,
+} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -16,12 +20,14 @@ ReactDOM.render(
   // See https://github.com/mui-org/material-ui/issues/18018 and https://github.com/mui-org/material-ui/issues/20012
 
   // <React.StrictMode>
-  <ThemeProvider theme={darkTheme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>,
+  <StylesProvider injectFirst>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </StylesProvider>,
   // </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
