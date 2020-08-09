@@ -17,32 +17,32 @@ const EventTablePaginationActions = ({
 }) => (
   <>
     <IconButton
-      onClick={(event) => {
-        onChangePage(event, 0);
+      onClick={() => {
+        onChangePage(0);
       }}
       disabled={!canPreviousPage}
     >
       <FirstPage />
     </IconButton>
     <IconButton
-      onClick={(event) => {
-        onChangePage(event, pageIndex - 1);
+      onClick={() => {
+        onChangePage(pageIndex - 1);
       }}
       disabled={!canPreviousPage}
     >
       <KeyboardArrowLeft />
     </IconButton>
     <IconButton
-      onClick={(event) => {
-        onChangePage(event, pageIndex + 1);
+      onClick={() => {
+        onChangePage(pageIndex + 1);
       }}
       disabled={!canNextPage}
     >
       <KeyboardArrowRight />
     </IconButton>
     <IconButton
-      onClick={(event) => {
-        onChangePage(event, pageCount - 1);
+      onClick={() => {
+        onChangePage(pageCount - 1);
       }}
       disabled={!canNextPage}
     >
