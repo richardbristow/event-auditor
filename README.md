@@ -1,4 +1,4 @@
-# Skills-Matrix App
+# Event-Auditor
 
 ## Installation
 
