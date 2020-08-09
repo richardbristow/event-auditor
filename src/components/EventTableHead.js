@@ -1,25 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TableCell, TableHead, TableRow } from '@material-ui/core';
+import styled from 'styled-components/macro';
+import {
+  TableCell,
+  TableHead,
+  TableRow,
+  TableSortLabel,
+} from '@material-ui/core';
+
+const StyledTableHead = styled(TableHead)`
+  background-color: #131313;
+`;
+
+const StyledTableCell = styled(TableCell)`
+  width: 25%;
+  vertical-align: text-top;
+`;
+
+const StyledColumnHeader = styled.div`
+  padding-bottom: 16px;
+`;
 
 const EventTableHead = ({ headerGroups }) => (
-  <TableHead style={{ backgroundColor: '#131313' }}>
+  <StyledTableHead>
     {headerGroups.map((headerGroup) => (
       <TableRow {...headerGroup.getHeaderGroupProps()}>
         {headerGroup.headers.map((column) => (
-          <TableCell
-            style={{ width: '25%', verticalAlign: 'text-top' }}
-            {...column.getHeaderProps()}
+          <StyledTableCell
+            {...column.getHeaderProps(column.getSortByToggleProps())}
           >
-            <div style={{ paddingBottom: '16px' }}>
+            <StyledColumnHeader>
               {column.render('Header')}
-            </div>
+              <TableSortLabel
+                active={column.canSort}
+                direction={column.isSortedDesc ? 'desc' : 'asc'}
+                hideSortIcon
+              />
+            </StyledColumnHeader>
             {column.canFilter && column.render('Filter')}
-          </TableCell>
+          </StyledTableCell>
         ))}
       </TableRow>
     ))}
-  </TableHead>
+  </StyledTableHead>
 );
 
 EventTableHead.propTypes = {
