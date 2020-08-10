@@ -24,7 +24,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-api": "NODE_ENV=development nodemon --watch src/api src/api/server.js",
-    "lint": "eslint 'src/**/*.{js,jsx}'"
+    "lint": "eslint 'src/**/*.{js,jsx}' && stylelint './src/**/*.{js,jsx}'",
+    "lint:js": "eslint 'src/**/*.{js,jsx}'",
+    "lint:css": "stylelint './src/**/*.{js,jsx}'"
   },
   "browserslist": {
     "production": [
@@ -49,6 +51,11 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
     "nodemon": "^2.0.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }
