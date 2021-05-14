@@ -22,13 +22,11 @@ const EventTableBody = ({
         prepareRow(row);
         return (
           <TableRow hover tabIndex={-1} {...row.getRowProps()}>
-            {row.cells.map((cell) => {
-              return (
-                <TableCell {...cell.getCellProps()}>
-                  {cell.render('Cell')}
-                </TableCell>
-              );
-            })}
+            {row.cells.map((cell) => (
+              <TableCell {...cell.getCellProps()}>
+                {cell.render('Cell')}
+              </TableCell>
+            ))}
           </TableRow>
         );
       })
